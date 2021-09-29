@@ -52,10 +52,6 @@ namespace Hospital.UI.Mvc.Controllers
         {
             try
             {
-                //if(consulta.DataHoraExame < DateTime.Now)
-                //{
-                //    return View();
-                //}
                 if (_consultaMedica.ValidarSeExisteConsultaData(consulta.DataHoraExame))
                 {
                     return View();

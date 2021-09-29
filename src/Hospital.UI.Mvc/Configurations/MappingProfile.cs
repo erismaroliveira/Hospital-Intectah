@@ -11,12 +11,6 @@ namespace Hospital.UI.MVC
             CreateMap<ExameViewModel, Exame>().ForMember(c => c.TipoExame, m => m.MapFrom(a => new TipoExame(a.TipoExameId, "", "")));
             CreateMap<Exame, ExameViewModel>().ForMember(c => c.TipoExameId, m => m.MapFrom(a => a.TipoExame.Id));
 
-            //CreateMap<ConsultaMedicaViewModel, ConsultaMedica>().ForMember(c => c.Exame, m => m.MapFrom(a => new Exame(a.ExameId, "", "", null)));
-            //CreateMap<ConsultaMedica, ConsultaMedicaViewModel>().ForMember(c => c.ExameId, m => m.MapFrom(a => a.Exame.Id));
-
-            //CreateMap<ConsultaMedicaViewModel, ConsultaMedica>().ForMember(c => c.Paciente, m => m.MapFrom(a => new Paciente(a.PacienteId, "", "", null, null, "", "", null)));
-            //CreateMap<ConsultaMedica, ConsultaMedicaViewModel>().ForMember(c => c.PacienteId, m => m.MapFrom(a => a.Paciente.Id));
-
             CreateMap<ConsultaMedicaViewModel, ConsultaMedica>()
                 .ForMember(c => c.Exame, m => m.MapFrom(a => new Exame(a.ExameId, "", "", null)))
                 .ForMember(c => c.Paciente,
