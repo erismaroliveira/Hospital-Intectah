@@ -1,4 +1,6 @@
-﻿namespace Hospital.Domain.Entidades
+﻿using System.ComponentModel;
+
+namespace Hospital.Domain.Entidades
 {
     public class Exame
     {
@@ -16,6 +18,8 @@
         }
         public int Id { get; set; }
         public string Nome { get; set; }
+
+        [DisplayName("Observação")]
         public string Observacao { get; set; }
         public TipoExame TipoExame { get; set; }
     }
