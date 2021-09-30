@@ -58,5 +58,23 @@ namespace Hospital.UI.MVC.Controllers
                 return View();
             }
         }
+
+        public ActionResult Delete(int id) =>
+            View(_pacienteServico.ConsultarPorId(id));
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(Paciente paciente)
+        {
+            try
+            {
+                _pacienteServico.Excluir(paciente.Id);
+                return RedirectToAction(nameof(Index));
+            }
+            catch
+            {
+                return View();
+            }
+        }
     }
 }
