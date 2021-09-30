@@ -37,6 +37,7 @@ namespace Hospital.Domain.Entidades
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
         [DisplayName("Data de Nascimento")]
+        [DataType(DataType.Date)]
         public DateTime? DataNascimento { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
@@ -48,6 +49,7 @@ namespace Hospital.Domain.Entidades
         public string Telefone { get; set; }
 
         [Required(ErrorMessage = "O campo {0} é obrigatório")]
+        [DisplayName("E-Mail")]
         [RegularExpression("^[a-zA-Z0-9_\\.-]+@([a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", ErrorMessage = "E-mail não é válido")]
         public string Email { get; set; }
         public ICollection<ConsultaMedica> Consultas { get; set; }
